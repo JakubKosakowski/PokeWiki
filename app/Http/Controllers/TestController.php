@@ -21,9 +21,14 @@ class TestController extends Controller
     public function show() {
         $randomPokemon = $this->api->pokemon(rand(1, 1026));
         return Inertia::render('Test', [
-            'url' => Storage::url('pokeball.png'),
             'random_pokemon' => json_decode($randomPokemon),
             'types' => json_decode($this->types)
+        ]);
+    }
+
+    public function showType(Request $request) {
+        return Inertia::render('Types', [
+            'type' => json_decode($this->api->pokemonType($request->id))
         ]);
     }
 }

@@ -6,11 +6,11 @@ import TypesList from "@/Components/TypesList";
 import { PageProps } from "@/types";
 import { Head } from "@inertiajs/react";
 
-export default function Test({url, random_pokemon, types}: PageProps<{url: string, random_pokemon: any, types: any}>) {
+export default function Test({random_pokemon, types}: PageProps<{random_pokemon: any, types: any}>) {
     console.log(types);
     return (
         <div className="bg-[#3b4cca] text-[#3b4cca] flex flex-col font-pokemon">
-            <Navbar url={url}/>
+            <Navbar/>
             <Head title="Test" />
             <div className="pt-12" style={{minHeight: "calc(100vh - 160px)"}}>
                 <div className="mx-auto max-w-7xl sm:px-6 lg:px-8">
