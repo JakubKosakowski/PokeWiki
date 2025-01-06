@@ -2,14 +2,14 @@ import { PageProps } from "@/types";
 import { HTMLAttributes } from "react";
 import NavbarLinkButton from "./NavbarLinkButton";
 
-export default function Navbar() {
+export default function Navbar({colors}: {colors:any}) {
     return(
-        <nav className="bg-[#ff0000] h-20 flex items-center">
+        <nav className={`h-20 flex items-center`} style={{backgroundColor: colors.primary_color}}>
             <img src='/storage/pokeball.png' className="h-20 m-5"/>
             <ul className="flex">
-                <li><NavbarLinkButton link="/test" text="Home"/></li>
-                <li><NavbarLinkButton link="/test" text="About"/></li>
-                <li><NavbarLinkButton link="/test" text="Test"/></li>
+                <li><NavbarLinkButton link="/test" text="Home" colors={colors}/></li>
+                <li><NavbarLinkButton link="/test" text="About" colors={colors}/></li>
+                <li><NavbarLinkButton link="/test" text="Test" colors={colors}/></li>
             </ul>
         </nav>
     );

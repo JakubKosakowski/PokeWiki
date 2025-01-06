@@ -2,11 +2,12 @@ import Footer from "@/Components/Footer"
 import Navbar from "@/Components/Navbar"
 import { Head } from "@inertiajs/react"
 
-export default function Types({type}: {type: any}) {
+export default function Types({type, colors}: {type: any, colors: any}) {
+    console.log(colors);
     return (
-        <div className="bg-[#3b4cca] text-[#3b4cca] flex flex-col font-pokemon">
-            <Navbar/>
-            <Head title="Test" />
+        <div className={`flex flex-col font-pokemon`} style={{backgroundColor: colors.bg_color, color: colors.text_color}}>
+            <Navbar colors={colors}/>
+            <Head title={type.name} />
             <div className="pt-12" style={{minHeight: "calc(100vh - 160px)"}}>
                 <div className="mx-auto max-w-7xl sm:px-6 lg:px-8">
                     <div className="overflow-hidden bg-white shadow-sm sm:rounded-lg flex-col justify-end">
@@ -16,7 +17,7 @@ export default function Types({type}: {type: any}) {
                     </div>
                 </div>
             </div>
-            <Footer/>
+            <Footer colors={colors}/>
         </div>
     )
 }
