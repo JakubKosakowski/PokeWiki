@@ -1,13 +1,13 @@
 import Footer from "@/Components/Footer";
 import GreetingsContainer from "@/Components/GreetingsContainer";
-import Navbar from "@/Components/NavBar";
+import Navbar from "@/Components/Navbar";
 import RandomPokemonSection from "@/Components/RandomPokemonSection";
 import TypesList from "@/Components/TypesList";
 import { PageProps } from "@/types";
 import { Head } from "@inertiajs/react";
 
-export default function Test({url, random_pokemon}: PageProps<{url: string, random_pokemon: any}>) {
-    console.log(random_pokemon);
+export default function Test({url, random_pokemon, types}: PageProps<{url: string, random_pokemon: any, types: any}>) {
+    console.log(types);
     return (
         <div className="bg-[#3b4cca] text-[#3b4cca] flex flex-col font-pokemon">
             <Navbar url={url}/>
@@ -23,7 +23,7 @@ export default function Test({url, random_pokemon}: PageProps<{url: string, rand
                         <GreetingsContainer/>
                         <RandomPokemonSection pokemon={random_pokemon}/>
                     </div>
-                    <TypesList/>
+                    <TypesList types={types}/>
                 </div>
             </div>
             <Footer/>

@@ -10,12 +10,20 @@ use Inertia\Response;
 
 class TestController extends Controller
 {
+    private $api;
+    private $types;
+
+    public function __construct() {
+        $this->api = new PokeApi();
+        $this->types = $this->api->resourceList('type');
+    }
+
     public function show() {
-        $api = new PokeApi();
-        $randomPokemon = $api->pokemon(rand(1, 1026));
+        $randomPokemon = $this->api->pokemon(rand(1, 1026));
         return Inertia::render('Test', [
             'url' => Storage::url('pokeball.png'),
-            'random_pokemon' => json_decode($randomPokemon)
+            'random_pokemon' => json_decode($randomPokemon),
+            'types' => json_decode($this->types)
         ]);
     }
 }
