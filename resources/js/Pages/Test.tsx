@@ -1,6 +1,6 @@
 import Footer from "@/Components/Footer";
 import GreetingsContainer from "@/Components/GreetingsContainer";
-import Navbar from "@/Components/Navbar";
+import Navbar from "@/Components/navbar/Navbar";
 import RandomPokemonSection from "@/Components/RandomPokemonSection";
 import TypesList from "@/Components/TypesList";
 import { PageProps } from "@/types";
