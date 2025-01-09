@@ -2,7 +2,7 @@ export default function GreetingsContainer() {
     return (
         <div className="text-black border border-solid border-[#CC0000] bg-white rounded mt-5 mr-5 p-10 w-4/5 flex flex-col">
             <div className="flex justify-center">
-                <p className="text-[#B3A125] text-4xl">Welcome to PokéWiki</p>
+                <p className="text-[#FFDE00] text-4xl">Welcome to PokéWiki</p>
             </div>
             <div className="p-5 text-xl">
                 <article>Hey, Trainer!

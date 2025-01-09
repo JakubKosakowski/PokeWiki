@@ -2,7 +2,7 @@ export default function TypesList({types}: {types: any}) {
     return(
         <div className="w-full mt-5 p-5 border border-solid border-[#CC0000] bg-white rounded flex flex-col">
             <div className="flex justify-center">
-                <p className="text-[#B3A125] text-4xl">Pokémon Types</p>
+                <p className="text-[#FFDE00] text-4xl">Pokémon Types</p>
             </div>
             <div className="flex flex-wrap">
                 {types.results.map((ele: {name: string, url: string}, index: number) => {
