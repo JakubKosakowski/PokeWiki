@@ -21,7 +21,7 @@ use Inertia\Inertia;
 // })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::get('/', [TestController::class, 'show'])->name('test.show');
-Route::get('/types/{id}', [TestController::class, 'showType'])->name('test.showType');
+Route::get('/types/{name}', [TestController::class, 'showType'])->name('test.showType');
 Route::get('/pokemon/{id}', [TestController::class, 'showPokemon'])->name('test.showPokemon');
 
 

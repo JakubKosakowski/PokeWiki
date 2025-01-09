@@ -11,11 +11,11 @@ export default function PokemonDetails({...props}) {
             <Head title={props.pokemon.name} />
             <div className="pt-12" style={{minHeight: "calc(100vh - 160px)"}}>
                 <div className="mx-auto max-w-7xl sm:px-6 lg:px-8">
-                    <div className="overflow-hidden bg-white shadow-sm sm:rounded-lg flex-col justify-end">
+                    <div className="overflow-hidden bg-white shadow-sm sm:rounded-lg flex-col justify-end" style={{backgroundColor: props.colors.primary_color}}>
                         <div className="p-6 text-gray-900 flex justify-end">
                             <img src={props.pokemon.sprites.front_default} style={{height: "250px", width: "250px"}}/>
                         </div>
-                        <PokemonAbilities/>
+                        <PokemonAbilities abilitiesList={props.abilitiesList}/>
                     </div>
                 </div>
             </div>

@@ -25,21 +25,27 @@ class TestController extends Controller
         return Inertia::render('Test', [
             'random_pokemon' => json_decode($randomPokemon),
             'types' => json_decode($this->types),
-            'colors' => $this->typeColors[0]
+            'colors' => $this->typeColors["main"]
         ]);
     }
 
     public function showType(Request $request) {
         return Inertia::render('Types', [
-            'type' => json_decode($this->api->pokemonType($request->id)),
-            'colors' => $this->typeColors[$request->id]
+            'type' => json_decode($this->api->pokemonType($request->name)),
+            'colors' => $this->typeColors[$request->name]
         ]);
     }
 
     public function showPokemon(Request $request) {
+        $pokemonData = json_decode($this->api->pokemon($request->id), true);
+        $abilitiesList = [];
+        foreach($pokemonData["abilities"] as $ability) {
+            $abilitiesList[] = json_decode($this->api->ability($ability["ability"]["name"]), true);
+        }
         return Inertia::render('PokemonDetails', [
-            'pokemon' => json_decode($this->api->pokemon($request->id)),
-            'colors' => $this->typeColors[0]
+            'pokemon' => $pokemonData,
+            'colors' => $this->typeColors[$pokemonData["types"][0]["type"]["name"]],
+            'abilitiesList' => $abilitiesList
         ]);
     }
 }

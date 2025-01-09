@@ -8,7 +8,7 @@ export default function TypesList({types}: {types: any}) {
                 {types.results.map((ele: {name: string, url: string}, index: number) => {
                     return index < 18 && 
                     <div className="flex flex-col justify-center" key={index}>
-                        <a href={`/types/${index+1}`}><img src={`/storage/icons/${ele.name.charAt(0).toUpperCase() + ele.name.slice(1)}_icon_SwSh.png`} style={{height: '128px', width: '128px'}} className="p-2 mt-5"/></a>
+                        <a href={`/types/${ele.name}`}><img src={`/storage/icons/${ele.name.charAt(0).toUpperCase() + ele.name.slice(1)}_icon_SwSh.png`} style={{height: '128px', width: '128px'}} className="p-2 mt-5"/></a>
                         <span className="text-center">{ele.name.charAt(0).toUpperCase() + ele.name.slice(1)}</span>
                     </div>
                 })}
