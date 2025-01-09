@@ -35,4 +35,11 @@ class TestController extends Controller
             'colors' => $this->typeColors[$request->id]
         ]);
     }
+
+    public function showPokemon(Request $request) {
+        return Inertia::render('PokemonDetails', [
+            'pokemon' => json_decode($this->api->pokemon($request->id)),
+            'colors' => $this->typeColors[0]
+        ]);
+    }
 }

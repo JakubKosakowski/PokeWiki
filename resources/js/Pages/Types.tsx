@@ -3,7 +3,7 @@ import Navbar from "@/Components/navbar/Navbar"
 import { Head } from "@inertiajs/react"
 
 export default function Types({type, colors}: {type: any, colors: any}) {
-    console.log(colors);
+    console.log(type);
     return (
         <div className={`flex flex-col font-pokemon`} style={{backgroundColor: colors.bg_color, color: colors.text_color}}>
             <Navbar colors={colors}/>

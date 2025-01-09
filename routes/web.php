@@ -22,6 +22,8 @@ use Inertia\Inertia;
 
 Route::get('/', [TestController::class, 'show'])->name('test.show');
 Route::get('/types/{id}', [TestController::class, 'showType'])->name('test.showType');
+Route::get('/pokemon/{id}', [TestController::class, 'showPokemon'])->name('test.showPokemon');
+
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
